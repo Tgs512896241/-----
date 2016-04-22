@@ -21,20 +21,31 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor  = RGBColor(215, green: 245, blue: 45, alpha: 1.0);
-        mainTableView = UITableView.init(frame: CGRectMake(0, 64, sys_width, sys_height-64), style: UITableViewStyle.Plain)
-        mainTableView?.delegate = self
-        mainTableView?.dataSource = self
-        mainTableView?.separatorColor = RGBColor(250, green: 250, blue: 250, alpha: 1.0)
+        self.mainTableView = UITableView.init(frame: CGRectMake(0, 64, sys_width, sys_height-64), style: UITableViewStyle.Plain)
+        self.mainTableView?.delegate = self
+        self.mainTableView?.dataSource = self
+        self.mainTableView?.separatorColor = RGBColor(250, green: 250, blue: 250, alpha: 1.0)
         self.view.addSubview(mainTableView!)
-        netParmas.setValue(page, forKey: "page")
-        netParmas.setValue(20, forKey: "pagesize")
-        netParmas.setValue("db3d71ceb08acb7bf6f7eeb17e067755", forKey: "key")
+        self.netParmas.setValue(page, forKey: "page")
+        self.netParmas.setValue(20, forKey: "pagesize")
+        self.netParmas.setValue("db3d71ceb08acb7bf6f7eeb17e067755", forKey: "key")
         TgsNetHelperShare.sharedNetManager().getGetNetInfoWithUrl("http://japi.juhe.cn/joke/content/text.from", andType: All, andWith: netParmas as [NSObject : AnyObject]) { (resultDic) in
-            print(resultDic)
-            
-            
-            
-            
+            let infoDic = NSDictionary.init(dictionary: resultDic)
+            if ((infoDic.valueForKey("info")?.isEqualToString("Success")) != nil)
+            {
+                let dataDic = infoDic.valueForKey("result")
+                if ((dataDic?.valueForKey("reason")?.isEqualToString("Success")) != nil)
+                {
+                    let listDic = dataDic!.valueForKey("result")
+                    print(listDic)
+                    let dataArr = NSArray.init(array: listDic!.valueForKey("data") as! NSArray)
+                    for  index in 0 ..< dataArr.count {
+                        self.dataListArr.addObject(dataArr.objectAtIndex(index))
+                    }
+                }
+                self.mainTableView?.reloadData()
+            }
+
         }
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -44,7 +55,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let strCell = "MainCell"
         let cell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: strCell)
-
+        cell.backgroundColor = UIColor.redColor()
         return cell
     }
 
