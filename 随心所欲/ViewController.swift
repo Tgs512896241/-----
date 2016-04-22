@@ -13,6 +13,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     var mainTableView:UITableView? = nil
     var sys_width = UIScreen.mainScreen().bounds.width
     var sys_height = UIScreen.mainScreen().bounds.height
+    var netParmas = NSMutableDictionary()
+    var dataListArr = NSMutableArray()
+    var page = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         mainTableView?.dataSource = self
         mainTableView?.separatorColor = RGBColor(250, green: 250, blue: 250, alpha: 1.0)
         self.view.addSubview(mainTableView!)
-        
+        netParmas.setValue(page, forKey: "page")
+        netParmas.setValue(20, forKey: "pagesize")
+        netParmas.setValue("db3d71ceb08acb7bf6f7eeb17e067755", forKey: "key")
+        TgsNetHelperShare.sharedNetManager().getGetNetInfoWithUrl("http://japi.juhe.cn/joke/content/text.from", andType: All, andWith: netParmas as [NSObject : AnyObject]) { (resultDic) in
+            print(resultDic)
+            
+            
+            
+            
+        }
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return 10;

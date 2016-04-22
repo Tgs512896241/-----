@@ -87,7 +87,7 @@
 		9B0A7F701B25D7C500063CD7 /* 随心所欲.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "随心所欲.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0A7F741B25D7C500063CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B0A7F751B25D7C500063CD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B0A7F771B25D7C500063CD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9B0A7F771B25D7C500063CD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		9B0A7F7A1B25D7C500063CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B0A7F7C1B25D7C500063CD7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9B0A7F7F1B25D7C500063CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -114,6 +114,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		784206AC1CCA219100F7DA7D /* C */ = {
+			isa = PBXGroup;
+			children = (
+				9B0A7F771B25D7C500063CD7 /* ViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		784206AD1CCA219100F7DA7D /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		784206AE1CCA219100F7DA7D /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 		78F0487E1CCA0B5F00770BCF /* Third */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,10 +235,12 @@
 		9B0A7F721B25D7C500063CD7 /* 随心所欲 */ = {
 			isa = PBXGroup;
 			children = (
+				784206AC1CCA219100F7DA7D /* C */,
+				784206AD1CCA219100F7DA7D /* M */,
+				784206AE1CCA219100F7DA7D /* V */,
 				78F0487E1CCA0B5F00770BCF /* Third */,
 				78F0B8A01CC9CC2F0044A5E8 /* Unit */,
 				9B0A7F751B25D7C500063CD7 /* AppDelegate.swift */,
-				9B0A7F771B25D7C500063CD7 /* ViewController.swift */,
 				9B0A7F791B25D7C500063CD7 /* Main.storyboard */,
 				9B0A7F7C1B25D7C500063CD7 /* Images.xcassets */,
 				9B0A7F7E1B25D7C500063CD7 /* LaunchScreen.xib */,

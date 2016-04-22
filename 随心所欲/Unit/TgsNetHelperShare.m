@@ -28,8 +28,7 @@ static TgsNetHelperShare *sharedManager = nil;
     
     NSNumber *index = [NSNumber numberWithInteger:type];
     NSMutableDictionary *dataDic = [[NSMutableDictionary alloc]initWithCapacity:5];
-    NSString *path;
-    [dataDic setObject:[NSString stringWithFormat:@"%@%@",path,urlPath] forKey:@"url"];
+    [dataDic setObject:[NSString stringWithFormat:@"%@",urlPath] forKey:@"url"];
     [dataDic setObject:index forKey:@"userinfo"];
     if (paramters.allKeys.count>0) {
         [dataDic setObject:paramters forKey:@"parameters"];
@@ -71,8 +70,7 @@ static TgsNetHelperShare *sharedManager = nil;
 -(void)getGetNetInfoWithUrl:(NSString *)urlPath andType:(RequestType)type andWith:(NSDictionary *)paramters andReturn:(void (^)(NSDictionary *dic))block{
     NSNumber *index = [NSNumber numberWithInteger:type];
     NSMutableDictionary *dataDic = [[NSMutableDictionary alloc]initWithCapacity:5];
-    NSString *path;
-    [dataDic setObject:[NSString stringWithFormat:@"%@%@",path,urlPath] forKey:@"url"];
+    [dataDic setObject:[NSString stringWithFormat:@"%@",urlPath] forKey:@"url"];
     [dataDic setObject:index forKey:@"userinfo"];
     if (paramters.allKeys.count>0) {
         [dataDic setObject:paramters forKey:@"parameters"];
@@ -90,7 +88,7 @@ static TgsNetHelperShare *sharedManager = nil;
 //    RequestType type = [[dictionary objectForKey:@"userinfo"] intValue];
     httpManager.requestSerializer = [AFHTTPRequestSerializer serializer];
     NSMutableDictionary *dataDic = [[NSMutableDictionary alloc]init];
-    [httpManager GET:[dictionary valueForKey:@"url"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [httpManager GET:[dictionary valueForKey:@"url"] parameters:[dictionary valueForKey:@"parameters"] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSData *data = [operation responseData];
         [dataDic setValue:@"Success" forKey:@"info"];
         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -99,8 +97,15 @@ static TgsNetHelperShare *sharedManager = nil;
             block(dataDic);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [dataDic setValue:@"Fail" forKey:@"info"];
-        [dataDic setValue:nil forKey:@"result"];
+        NSData *data = [operation responseData];
+        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        if (resultDic.allKeys.count>0) {
+            [dataDic setValue:resultDic forKey:@"result"];
+            [dataDic setValue:@"Success" forKey:@"info"];
+        }else{
+            [dataDic setValue:@"Fail" forKey:@"info"];
+            [dataDic setValue:nil forKey:@"result"];
+        }
         if (block) {
             block(dataDic);
         }
