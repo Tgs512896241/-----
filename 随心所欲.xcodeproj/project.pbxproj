@@ -25,6 +25,8 @@
 		78F048B91CCA0B7100770BCF /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F048A51CCA0B7100770BCF /* UIRefreshControl+AFNetworking.m */; };
 		78F048BA1CCA0B7100770BCF /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F048A71CCA0B7100770BCF /* UIWebView+AFNetworking.m */; };
 		78F0B8A51CC9CE0E0044A5E8 /* TgsNetHelperShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F0B8A41CC9CE0E0044A5E8 /* TgsNetHelperShare.m */; };
+		78F1ED431CCDB55300F8AA4A /* TgsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1ED411CCDB55300F8AA4A /* TgsViewTableViewCell.swift */; };
+		78F1ED441CCDB55300F8AA4A /* TgsViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F1ED421CCDB55300F8AA4A /* TgsViewTableViewCell.xib */; };
 		9B0A7F761B25D7C500063CD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0A7F751B25D7C500063CD7 /* AppDelegate.swift */; };
 		9B0A7F781B25D7C500063CD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0A7F771B25D7C500063CD7 /* ViewController.swift */; };
 		9B0A7F7B1B25D7C500063CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0A7F791B25D7C500063CD7 /* Main.storyboard */; };
@@ -84,6 +86,8 @@
 		78F0B8A21CC9CE0D0044A5E8 /* 随心所欲-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "随心所欲-Bridging-Header.h"; sourceTree = "<group>"; };
 		78F0B8A31CC9CE0E0044A5E8 /* TgsNetHelperShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TgsNetHelperShare.h; sourceTree = "<group>"; };
 		78F0B8A41CC9CE0E0044A5E8 /* TgsNetHelperShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TgsNetHelperShare.m; sourceTree = "<group>"; };
+		78F1ED411CCDB55300F8AA4A /* TgsViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TgsViewTableViewCell.swift; sourceTree = "<group>"; };
+		78F1ED421CCDB55300F8AA4A /* TgsViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TgsViewTableViewCell.xib; sourceTree = "<group>"; };
 		9B0A7F701B25D7C500063CD7 /* 随心所欲.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "随心所欲.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0A7F741B25D7C500063CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B0A7F751B25D7C500063CD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 		784206AE1CCA219100F7DA7D /* V */ = {
 			isa = PBXGroup;
 			children = (
+				78F1ED411CCDB55300F8AA4A /* TgsViewTableViewCell.swift */,
+				78F1ED421CCDB55300F8AA4A /* TgsViewTableViewCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B0A7F7B1B25D7C500063CD7 /* Main.storyboard in Resources */,
+				78F1ED441CCDB55300F8AA4A /* TgsViewTableViewCell.xib in Resources */,
 				9B0A7F801B25D7C500063CD7 /* LaunchScreen.xib in Resources */,
 				9B0A7F7D1B25D7C500063CD7 /* Images.xcassets in Resources */,
 			);
@@ -392,6 +399,7 @@
 				78F048AE1CCA0B7100770BCF /* AFURLRequestSerialization.m in Sources */,
 				78F048B01CCA0B7100770BCF /* AFURLSessionManager.m in Sources */,
 				78F048BA1CCA0B7100770BCF /* UIWebView+AFNetworking.m in Sources */,
+				78F1ED431CCDB55300F8AA4A /* TgsViewTableViewCell.swift in Sources */,
 				9B0A7F761B25D7C500063CD7 /* AppDelegate.swift in Sources */,
 				78F048B31CCA0B7100770BCF /* AFNetworkActivityIndicatorManager.m in Sources */,
 				78F0B8A51CC9CE0E0044A5E8 /* TgsNetHelperShare.m in Sources */,

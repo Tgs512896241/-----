@@ -25,6 +25,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.mainTableView?.delegate = self
         self.mainTableView?.dataSource = self
         self.mainTableView?.separatorColor = RGBColor(250, green: 250, blue: 250, alpha: 1.0)
+        self.mainTableView?.registerClass(TgsViewTableViewCell.self, forCellReuseIdentifier: "TgsViewTableViewCell")
         self.view.addSubview(mainTableView!)
         self.netParmas.setValue(page, forKey: "page")
         self.netParmas.setValue(20, forKey: "pagesize")
@@ -42,6 +43,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                     for  index in 0 ..< dataArr.count {
                         self.dataListArr.addObject(dataArr.objectAtIndex(index))
                     }
+                    print(self.dataListArr)
                 }
                 self.mainTableView?.reloadData()
             }
@@ -53,12 +55,30 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let strCell = "MainCell"
-        let cell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: strCell)
-        cell.backgroundColor = UIColor.redColor()
+        let strCell = "TgsViewTableViewCell"
+//        var cell:TgsViewTableViewCell? = tableView.dequeueReusableCellWithIdentifier(strCell) as? TgsViewTableViewCell
+        let  cell = NSBundle.mainBundle().loadNibNamed(strCell, owner: nil, options: nil)[0] as! TgsViewTableViewCell
+
+//        if  cell == nil  {
+//            cell = TgsViewTableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: strCell)
+//        }
+        if self.dataListArr.count>0 {
+            let cellDic = NSDictionary.init(dictionary:  dataListArr[indexPath.row] as! NSDictionary)
+            print(cellDic)
+            let nameStr = cellDic.valueForKey("content") as? String
+            cell.contentLabel.text = nameStr
+        }
         return cell
     }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if self.dataListArr.count>0 {
+            let cellDic = NSDictionary.init(dictionary:  dataListArr[indexPath.row] as! NSDictionary)
+            print(cellDic)
+            let nameStr = cellDic.valueForKey("content") as? String
 
+        }
+        return 100
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
