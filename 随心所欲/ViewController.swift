@@ -31,6 +31,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.netParmas.setValue(20, forKey: "pagesize")
         self.netParmas.setValue("db3d71ceb08acb7bf6f7eeb17e067755", forKey: "key")
         TgsNetHelperShare.sharedNetManager().getGetNetInfoWithUrl("http://japi.juhe.cn/joke/content/text.from", andType: All, andWith: netParmas as [NSObject : AnyObject]) { (resultDic) in
+<<<<<<< Updated upstream
             let infoDic = NSDictionary.init(dictionary: resultDic)
             if ((infoDic.valueForKey("info")?.isEqualToString("Success")) != nil)
             {
@@ -48,6 +49,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 self.mainTableView?.reloadData()
             }
 
+=======
+            print(resultDic)
+>>>>>>> Stashed changes
         }
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
