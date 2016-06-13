@@ -24,5 +24,6 @@ typedef enum : NSUInteger {
 
 -(void)getPostNetInfoWithUrl:(NSString *)urlPath andType:(RequestType)type andWith:(NSDictionary *)paramters andReturn:(void (^)(NSDictionary *dic))block;
 -(void)getGetNetInfoWithUrl:(NSString *)urlPath andType:(RequestType)type andWith:(NSDictionary *)paramters andReturn:(void (^)(NSDictionary *dic))block;
-
+//根据颜色值获取图片
+-(UIImage *)imageWithColor:(UIColor *)color ;
 @end
