@@ -9,10 +9,8 @@
 import UIKit
 
 
-class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class ViewController: RootController,UITableViewDataSource,UITableViewDelegate{
     var mainTableView:UITableView? = nil
-    var sys_width = UIScreen.mainScreen().bounds.width
-    var sys_height = UIScreen.mainScreen().bounds.height-64
     var netParmas = NSMutableDictionary()
     var dataListArr = NSMutableArray()
     var page = 1
@@ -48,9 +46,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         self.getNetListData()
     }
     func setTopNavInfo(){
-        let backImage = TgsNetHelperShare .sharedNetManager().imageWithColor(RGBColor(255, green: 87, blue: 34, alpha: 1.0))
-        self.navigationController?.navigationBar.setBackgroundImage(backImage, forBarMetrics: UIBarMetrics.Default)
-
         self.view.backgroundColor  = RGBColor(255, green: 255, blue: 255, alpha: 1.0);
         let titleLabel:UILabel = UILabel.init(frame: CGRectMake(0, 0, sys_width*0.4, 44))
         titleLabel.textAlignment = NSTextAlignment.Center
@@ -116,18 +111,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//  自动计算字符串的动态高度
-    func getTextRectSize(text:NSString,font:UIFont,size:CGSize) -> CGRect {
-        let attributes = [NSFontAttributeName: font]
-        let option = NSStringDrawingOptions.UsesLineFragmentOrigin
-        let rect:CGRect = text.boundingRectWithSize(size, options: option, attributes: attributes, context: nil)
-        //        println("rect:\(rect)");
-        return rect;
-    }
-    
-    func RGBColor( red:Float,green:Float,blue:Float,alpha:Float ) -> UIColor {
-        return UIColor.init(colorLiteralRed: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
-    }
+
 
 }
 

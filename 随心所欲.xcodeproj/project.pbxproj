@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78E9E9281D0FA20D00A39BF4 /* BarRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9E9271D0FA20D00A39BF4 /* BarRootController.swift */; };
+		78E9E92A1D0FA43000A39BF4 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9E9291D0FA43000A39BF4 /* RootController.swift */; };
+		78E9E92E1D0FCDFA00A39BF4 /* RobertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E9E92D1D0FCDFA00A39BF4 /* RobertViewController.swift */; };
 		78EE2C881CD075160008FEEB /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE2C5E1CD075160008FEEB /* MJRefreshAutoFooter.m */; };
 		78EE2C891CD075160008FEEB /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE2C601CD075160008FEEB /* MJRefreshBackFooter.m */; };
 		78EE2C8A1CD075160008FEEB /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EE2C621CD075160008FEEB /* MJRefreshComponent.m */; };
@@ -65,6 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78E9E9271D0FA20D00A39BF4 /* BarRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarRootController.swift; sourceTree = "<group>"; };
+		78E9E9291D0FA43000A39BF4 /* RootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		78E9E92D1D0FCDFA00A39BF4 /* RobertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobertViewController.swift; sourceTree = "<group>"; };
 		78EE2C5D1CD075160008FEEB /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		78EE2C5E1CD075160008FEEB /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		78EE2C5F1CD075160008FEEB /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				9B0A7F771B25D7C500063CD7 /* ViewController.swift */,
+				78E9E92D1D0FCDFA00A39BF4 /* RobertViewController.swift */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -398,6 +405,8 @@
 				78F0487E1CCA0B5F00770BCF /* Third */,
 				78F0B8A01CC9CC2F0044A5E8 /* Unit */,
 				9B0A7F751B25D7C500063CD7 /* AppDelegate.swift */,
+				78E9E9271D0FA20D00A39BF4 /* BarRootController.swift */,
+				78E9E9291D0FA43000A39BF4 /* RootController.swift */,
 				9B0A7F791B25D7C500063CD7 /* Main.storyboard */,
 				9B0A7F7C1B25D7C500063CD7 /* Images.xcassets */,
 				9B0A7F7E1B25D7C500063CD7 /* LaunchScreen.xib */,
@@ -541,6 +550,7 @@
 				78F048B91CCA0B7100770BCF /* UIRefreshControl+AFNetworking.m in Sources */,
 				78F048B51CCA0B7100770BCF /* UIAlertView+AFNetworking.m in Sources */,
 				78EE2C8E1CD075160008FEEB /* MJRefreshAutoNormalFooter.m in Sources */,
+				78E9E9281D0FA20D00A39BF4 /* BarRootController.swift in Sources */,
 				78F048A81CCA0B7100770BCF /* AFHTTPRequestOperation.m in Sources */,
 				9B0A7F781B25D7C500063CD7 /* ViewController.swift in Sources */,
 				78F048A91CCA0B7100770BCF /* AFHTTPRequestOperationManager.m in Sources */,
@@ -553,6 +563,7 @@
 				78F048AF1CCA0B7100770BCF /* AFURLResponseSerialization.m in Sources */,
 				78EE2C901CD075160008FEEB /* MJRefreshBackGifFooter.m in Sources */,
 				78EE2C881CD075160008FEEB /* MJRefreshAutoFooter.m in Sources */,
+				78E9E92E1D0FCDFA00A39BF4 /* RobertViewController.swift in Sources */,
 				78F048B41CCA0B7100770BCF /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				78EE2C891CD075160008FEEB /* MJRefreshBackFooter.m in Sources */,
 				78F048AD1CCA0B7100770BCF /* AFURLConnectionOperation.m in Sources */,
@@ -560,6 +571,7 @@
 				78F048AC1CCA0B7100770BCF /* AFSecurityPolicy.m in Sources */,
 				78F048AA1CCA0B7100770BCF /* AFHTTPSessionManager.m in Sources */,
 				78EE2C931CD075160008FEEB /* MJRefreshGifHeader.m in Sources */,
+				78E9E92A1D0FA43000A39BF4 /* RootController.swift in Sources */,
 				78EE2C8F1CD075160008FEEB /* MJRefreshAutoStateFooter.m in Sources */,
 				78F048AE1CCA0B7100770BCF /* AFURLRequestSerialization.m in Sources */,
 				78F048B01CCA0B7100770BCF /* AFURLSessionManager.m in Sources */,
